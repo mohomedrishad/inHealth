@@ -1,0 +1,369 @@
+/* body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    position: relative;
+    height: 120px;
+    overflow: hidden;
+}
+
+.header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://img.freepik.com/premium-photo/hands-medical-doctor_93675-12888.jpg');
+    background-size: cover;
+    filter: blur(10px);
+}
+
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 36px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.bg-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+}
+
+.topnav {
+    overflow: hidden;
+}
+
+.topnav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 10%;
+}
+
+.topnav a.active {
+    background-color: #333;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 10%;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 10px;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: rgb(31, 14, 223);
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 10px;
+}
+
+#myBtn:hover {
+    background-color: #555;
+}
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+input{
+    display: none;
+}
+
+.gallary {
+    width:100%;  
+    text-align:center;
+}
+
+h1 {
+    font-weight: normal;
+    font-size: 35;
+    position: relative;
+    margin: 40px 0;
+} 
+h1::before{
+    content:'';
+    position: absolute;
+    width: 300px;
+    height: 3%;
+    background-color: brown;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        width: 45px;
+    }
+    50%{
+        width: 900px;
+    }
+    100%{
+        width: 45px;
+    }
+
+}
+
+.top-content{
+    background-color: rgb(231, 247, 231) ;
+    width: 95%;
+    margin: 0 auto 20px auto;
+    height: 60px;
+    display: flex;
+    align-items: center ; 
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+h3{
+    height: 100%;
+    background-color: rgb(221, 221, 223);
+    line-height: 60px;
+    padding: 0 50px;
+    color: white;   
+}
+label{
+    display: inline-block;
+    height: 100%;
+    padding: 0 5px    ;
+    margin: 0 20px;
+    line-height: 60px;
+    font-size: 18px;
+    color: gray;
+    cursor: pointer;
+    transition: color 0.05s;
+}
+label:hover{
+    color: black;
+}
+.photo-gallary {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+}
+ .pic {
+    position: relative; 
+    height: 230px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); 
+    cursor: pointer;    
+ }
+ 
+ .pic img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: .5s;
+ }
+
+ .pic::before{
+    content: "Our services";
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: -100px;
+    opacity: 0;
+    transition: .3s;
+    transition-delay: .2s;
+
+ }
+ .pic:after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: .3s;
+
+ }
+.pic:hover::after{
+    height: 100%;
+    }
+.pic:hover::before{
+    opacity: 1;
+    margin-top: -50px;
+    transition-delay: 0s;
+}
+
+/* navi bar */
+.nav-item {
+    list-style-type: none;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 171.429% */
+    letter-spacing: 0.2px;
+    margin-inline: 7px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #737373;
+}
+
+.nav-item a:hover {
+    color: #303030;
+}
+
+.nav-logo {
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo img {
+    width: 60px;
+}
+
+.nav-logo p {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 133.333% */
+    letter-spacing: 0.1px;
+}
+
+.nav-content {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    max-width: 90vw;
+    margin-inline: auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.primary-navigation {
+    display: flex;
+	gap: 10px;
+}
+
+.primary-navigation[data-visible="true"] {
+    transform: translateX(0%);
+}
+	
+.nav-toggle {
+    display: none;
+}
+
+@media (max-width: 35em) {
+    .primary-navigation {
+        position: fixed;
+        inset: 0 0 0 30%;
+        background-color: #B9FF66;
+        flex-direction: column;
+        align-items: center;
+        padding: 10rem 2em;
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+    }
+
+    .nav-item {
+        margin-block: 10px;
+    }
+
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        z-index: 999;
+        border: none;
+        background: none;
+        aspect-ratio: 1;
+        top: 3.3rem;
+        right: 2rem;
+    }
+
+    .nav-toggle img {
+        width: 20px;
+    }
+}
